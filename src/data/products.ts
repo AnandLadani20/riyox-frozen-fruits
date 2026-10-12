@@ -1,4 +1,10 @@
-export type ProductCategory = "fruit" | "berry" | "pulp" | "speciality";
+export type ProductCategory =
+  | "food"
+  | "vegetable"
+  | "fruit"
+  | "berry"
+  | "pulp"
+  | "speciality";
 
 export type Product = {
   slug: string;
@@ -14,6 +20,18 @@ export const categoryMeta: Record<
   ProductCategory,
   { label: string; plural: string; description: string }
 > = {
+  food: {
+    label: "Frozen Food",
+    plural: "Frozen Foods",
+    description:
+      "Ready-to-cook frozen snacks and sides, made in hygienic conditions and frozen fast so they cook up crisp and delicious every time.",
+  },
+  vegetable: {
+    label: "Frozen Vegetable",
+    plural: "Frozen Vegetables",
+    description:
+      "Farm-fresh vegetables cleaned, blanched and individually quick frozen to keep their colour, crunch and nutrition locked in.",
+  },
   fruit: {
     label: "Frozen Fruit",
     plural: "Frozen Fruits",
@@ -41,6 +59,94 @@ export const categoryMeta: Record<
 };
 
 export const products: Product[] = [
+  // Frozen Foods
+  {
+    slug: "french-fries",
+    name: "French Fries",
+    category: "food",
+    image: "/images/products/food-french-fries.jpg",
+    tagline: "Golden, crispy straight-cut fries",
+    description:
+      "Premium potato fries par-fried and quick frozen, ready to fry or air-fry into crisp, golden fries for restaurants, cafés and QSR kitchens.",
+    featured: true,
+  },
+  {
+    slug: "veg-samosa",
+    name: "Veg. Samosa",
+    category: "food",
+    image: "/images/products/food-veg-samosa.jpg",
+    tagline: "Crisp pastry with spiced potato & peas",
+    description:
+      "Classic Indian samosas with a flaky pastry shell and a spiced potato and green pea filling, frozen ready to fry for a perfect snack every time.",
+  },
+  {
+    slug: "spring-roll",
+    name: "Spring Roll",
+    category: "food",
+    image: "/images/products/food-spring-roll.jpg",
+    tagline: "Crunchy rolls with fresh veg filling",
+    description:
+      "Thin, crispy spring roll wrappers packed with a seasoned mixed vegetable filling — frozen ready to cook for starters, buffets and catering.",
+  },
+
+  // Frozen Vegetables
+  {
+    slug: "green-peas",
+    name: "Green Peas",
+    category: "vegetable",
+    image: "/images/products/veg-green-peas.jpg",
+    tagline: "Sweet, tender garden peas",
+    description:
+      "Tender green peas shelled, blanched and IQF frozen within hours of harvest to keep their sweetness, bright colour and nutrition all year round.",
+    featured: true,
+  },
+  {
+    slug: "sweet-corn",
+    name: "Sweet Corn",
+    category: "vegetable",
+    image: "/images/products/veg-sweet-corn.jpg",
+    tagline: "Golden, juicy sweet corn kernels",
+    description:
+      "Plump sweet corn kernels individually quick frozen to retain their natural sweetness and crunch — ideal for soups, salads, snacks and pizzas.",
+    featured: true,
+  },
+  {
+    slug: "mix-veg",
+    name: "Mix Veg.",
+    category: "vegetable",
+    image: "/images/products/veg-mix-veg.jpg",
+    tagline: "Colourful ready-to-cook vegetable medley",
+    description:
+      "A vibrant mix of carrots, beans, cauliflower and broccoli, cut, blanched and IQF frozen — ready to cook for curries, pulao, stir-fries and soups.",
+  },
+  {
+    slug: "broccoli",
+    name: "Broccoli",
+    category: "vegetable",
+    image: "/images/products/veg-broccoli.jpg",
+    tagline: "Nutrient-rich green broccoli florets",
+    description:
+      "Fresh broccoli florets blanched and individually quick frozen to keep their deep green colour, firm texture and nutrients intact.",
+  },
+  {
+    slug: "spinach",
+    name: "Spinach",
+    category: "vegetable",
+    image: "/images/products/veg-spinach.jpg",
+    tagline: "Iron-rich, fresh green spinach",
+    description:
+      "Clean, tender spinach leaves blanched and frozen at peak freshness — ready for palak dishes, soups, pastas and smoothies.",
+  },
+  {
+    slug: "green-beans",
+    name: "Green Beans",
+    category: "vegetable",
+    image: "/images/products/veg-green-beans.jpg",
+    tagline: "Crisp, evenly cut green beans",
+    description:
+      "Tender green beans trimmed, cut and IQF frozen to stay crisp and bright green — perfect for sabzis, stir-fries and mixed vegetable dishes.",
+  },
+
   // Frozen Fruits
   {
     slug: "kesar-mango",

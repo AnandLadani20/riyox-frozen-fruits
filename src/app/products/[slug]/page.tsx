@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Globe2,
   PackageCheck,
+  ChefHat,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -49,6 +50,13 @@ const features = [
   { icon: Snowflake, label: "IQF Frozen" },
   { icon: ShieldCheck, label: "Export Quality" },
   { icon: Globe2, label: "100% Natural" },
+  { icon: PackageCheck, label: "Private Label Available" },
+];
+
+const foodFeatures = [
+  { icon: Snowflake, label: "Quick Frozen" },
+  { icon: ShieldCheck, label: "Export Quality" },
+  { icon: ChefHat, label: "Ready to Cook" },
   { icon: PackageCheck, label: "Private Label Available" },
 ];
 
@@ -117,7 +125,7 @@ export default async function ProductPage({
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {features.map((f) => (
+              {(product.category === "food" ? foodFeatures : features).map((f) => (
                 <div
                   key={f.label}
                   className="flex flex-col items-center gap-2 rounded-2xl border border-ink-100 bg-white px-3 py-4 text-center shadow-soft"

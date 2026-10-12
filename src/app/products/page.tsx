@@ -9,11 +9,13 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Our Products",
   description:
-    "Browse Riyox Foods' full range of premium IQF frozen fruits, imported berries, fruit pulps and speciality produce — available in retail, bulk and private-label packs.",
+    "Browse Riyox Foods' full range of premium frozen foods, IQF frozen vegetables, frozen fruits, imported berries, fruit pulps and speciality produce — available in retail, bulk and private-label packs.",
 };
 
 const tabs: { key: ProductCategory | "all"; label: string }[] = [
   { key: "all", label: "All Products" },
+  { key: "food", label: categoryMeta.food.plural },
+  { key: "vegetable", label: categoryMeta.vegetable.plural },
   { key: "fruit", label: categoryMeta.fruit.plural },
   { key: "berry", label: categoryMeta.berry.plural },
   { key: "pulp", label: categoryMeta.pulp.plural },
@@ -35,8 +37,8 @@ export default async function ProductsPage({
     <div className="pb-16 sm:pb-20">
       <PageBanner
         eyebrow="Our Range"
-        title="Premium frozen fruits, berries, pulps & speciality produce"
-        description="Every product is individually quick frozen (IQF), quality checked and available in retail, bulk and private-label packaging."
+        title="Premium frozen foods, vegetables, fruits & more"
+        description="Every product is quick frozen at peak freshness, quality checked and available in retail, bulk and private-label packaging."
       />
       <Container>
         <div className="mx-auto -mt-2 flex max-w-full flex-wrap items-center justify-center gap-2 overflow-x-auto">

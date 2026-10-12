@@ -10,7 +10,7 @@ import { CtaSection } from "@/components/sections/cta-section";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Riyox Foods LLP brings nature's finest frozen fruits, imported berries and fruit pulps to the world through advanced IQF freezing, strict quality assurance and a reliable cold chain.",
+    "Riyox Foods LLP brings nature's finest frozen foods, frozen vegetables, frozen fruits, imported berries and fruit pulps to the world through advanced IQF freezing, strict quality assurance and a reliable cold chain.",
 };
 
 export default function AboutPage() {

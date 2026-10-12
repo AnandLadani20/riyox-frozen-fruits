@@ -108,3 +108,86 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+/* brand wordmark gradients, matched to the Riyox logo */
+.text-brand-gradient {
+  background-image: linear-gradient(90deg, #0b9339 0%, #3fa13a 55%, #7ab52b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-sun-gradient {
+  background-image: linear-gradient(90deg, #f3a90c 0%, #ee8a0a 55%, #e8650a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* safety net: hide the intro splash even if JavaScript never runs */
+.splash-fallback {
+  animation: splash-fallback 0.4s ease 5s forwards;
+}
+
+@keyframes splash-fallback {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* intro splash entrance — plain CSS so it plays from first paint, before hydration */
+.splash-mark {
+  animation: splash-mark 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.splash-letter {
+  display: inline-block;
+  animation: splash-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(0.35s + var(--i, 0) * 0.07s);
+}
+.splash-foods {
+  letter-spacing: 0.62em;
+  animation: splash-foods 0.9s ease-out 0.8s both;
+}
+.splash-tagline {
+  animation: splash-rise 0.5s ease-out 1.2s both;
+}
+.splash-bar {
+  transform-origin: left;
+  animation: splash-bar 2s ease-in-out both;
+}
+
+@keyframes splash-mark {
+  from {
+    opacity: 0;
+    transform: scale(0.4) rotate(-25deg);
+  }
+}
+@keyframes splash-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+@keyframes splash-foods {
+  from {
+    opacity: 0;
+    letter-spacing: 0.1em;
+  }
+}
+@keyframes splash-bar {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-mark,
+  .splash-letter,
+  .splash-foods,
+  .splash-tagline,
+  .splash-bar {
+    animation-duration: 0.01s;
+    animation-delay: 0s;
+  }
+}

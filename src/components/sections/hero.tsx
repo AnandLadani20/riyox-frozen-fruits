@@ -5,14 +5,19 @@ import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Snowflake, Leaf, BadgeCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { useSplashDone } from "@/components/layout/splash-screen";
+import { products } from "@/data/products";
 
 const stats = [
-  { value: "29+", label: "Frozen Varieties" },
+  { value: `${products.length}+`, label: "Frozen Varieties" },
   { value: "100%", label: "Natural, No Preservatives" },
   { value: "Global", label: "Export Ready Supply" },
 ];
 
 export function Hero() {
+  const ready = useSplashDone();
+  const show = <T,>(target: T) => (ready ? target : undefined);
+
   return (
     <section className="relative overflow-hidden bg-leaf-texture pb-20 pt-10 sm:pb-28 sm:pt-16">
       <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-brand-200/40 blur-3xl" />
@@ -22,54 +27,73 @@ export function Hero() {
         <div>
           <motion.span
             initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={show({ opacity: 1, y: 0 })}
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-brand-700 shadow-sm backdrop-blur"
           >
             <Leaf className="h-3.5 w-3.5" />
-            Where Trust Meets Quality
+            Premium Frozen Foods &amp; Produce
           </motion.span>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display mt-6 text-balance text-4xl font-bold leading-[1.08] text-ink-900 sm:text-5xl lg:text-[3.4rem]"
-          >
-            Nature&apos;s Freshness,{" "}
-            <span className="relative text-brand-700">
-              Frozen at Its Peak
-              <svg
-                viewBox="0 0 300 12"
-                className="absolute -bottom-1 left-0 h-3 w-full text-sun-400"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M2 9.5C60 2 180 2 298 9.5"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </svg>
-            </span>
-          </motion.h1>
+          <h1 className="mt-7">
+            <motion.span
+              initial={{ opacity: 0, y: 24, scale: 0.94 }}
+              animate={show({ opacity: 1, y: 0, scale: 1 })}
+              transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+              className="block origin-left"
+            >
+              <Image
+                src="/images/brand/riyox-logo.png"
+                alt="Riyox Foods"
+                width={2801}
+                height={1219}
+                priority
+                sizes="(max-width: 640px) 230px, 300px"
+                className="h-24 w-auto drop-shadow-sm sm:h-28 lg:h-32"
+              />
+            </motion.span>
+
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={show({ opacity: 1, y: 0 })}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="font-display mt-6 block text-balance text-3xl font-bold leading-[1.12] text-ink-900 sm:text-4xl lg:text-[2.6rem]"
+            >
+              Nature&apos;s Freshness,{" "}
+              <span className="relative text-brand-700">
+                Frozen at Its Peak
+                <svg
+                  viewBox="0 0 300 12"
+                  className="absolute -bottom-1 left-0 h-3 w-full text-sun-400"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M2 9.5C60 2 180 2 298 9.5"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                </svg>
+              </span>
+            </motion.span>
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            animate={show({ opacity: 1, y: 0 })}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-6 max-w-xl text-balance text-base leading-relaxed text-ink-500 sm:text-lg"
           >
-            Riyox Foods supplies premium IQF frozen fruits, imported berries
-            and fruit pulps to hotels, ice cream makers, cafés and exporters —
+            Riyox Foods supplies premium frozen foods, IQF vegetables, fruits,
+            berries and fruit pulps to hotels, ice cream makers, cafés and exporters —
             picked fresh, frozen fast, delivered with trust.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            animate={show({ opacity: 1, y: 0 })}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <Button href="/products" size="lg">
@@ -90,8 +114,8 @@ export function Hero() {
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            animate={show({ opacity: 1, y: 0 })}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-ink-100 pt-8"
           >
             {stats.map((stat) => (
@@ -109,7 +133,7 @@ export function Hero() {
 
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={show({ opacity: 1, scale: 1 })}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto w-full max-w-lg"
         >

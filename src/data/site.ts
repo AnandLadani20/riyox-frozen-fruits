@@ -3,7 +3,7 @@ export const site = {
   legalName: "Riyox Foods LLP",
   tagline: "Where Trust Meets Quality",
   description:
-    "Riyox Foods LLP is dedicated to bringing nature's finest produce to the world through advanced freezing, processing and packing technology. We specialize in Frozen Fruits, Imported IQF Berries, Fruit Pulps and Speciality produce, delivering unmatched quality, freshness and nutrition in every pack.",
+    "Riyox Foods LLP is dedicated to bringing nature's finest produce to the world through advanced freezing, processing and packing technology. We specialize in Frozen Foods, Frozen Vegetables, Frozen Fruits, Imported IQF Berries, Fruit Pulps and Speciality produce, delivering unmatched quality, freshness and nutrition in every pack.",
   mission:
     "To preserve nature's goodness and deliver trust, quality and satisfaction to our global partners.",
   url: "https://www.riyoxfoods.com",

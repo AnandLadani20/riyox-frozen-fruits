@@ -16,8 +16,8 @@ export function CtaSection() {
               Let&apos;s Grow Together.
             </h2>
             <p className="relative mx-auto mt-5 max-w-xl text-balance text-white/80">
-              Partner with Riyox Foods for premium frozen fruits, imported
-              berries and fruit pulps — reliable supply, consistent quality,
+              Partner with Riyox Foods for premium frozen foods, vegetables,
+              fruits, berries and fruit pulps — reliable supply, consistent quality,
               every single time.
             </p>
             <div className="relative mt-9 flex flex-wrap items-center justify-center gap-4">

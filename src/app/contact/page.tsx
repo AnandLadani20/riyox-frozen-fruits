@@ -5,7 +5,7 @@ import { ContactSection } from "@/components/sections/contact-section";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Riyox Foods LLP for bulk orders, private-label packaging and export enquiries on premium frozen fruits, imported berries and fruit pulps.",
+    "Get in touch with Riyox Foods LLP for bulk orders, private-label packaging and export enquiries on premium frozen foods, frozen vegetables, frozen fruits, imported berries and fruit pulps.",
 };
 
 export default function ContactPage() {

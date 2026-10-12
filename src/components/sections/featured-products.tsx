@@ -18,7 +18,7 @@ export function FeaturedProducts() {
               align="left"
               eyebrow="Bestsellers"
               title="Customer-favourite frozen picks"
-              description="A snapshot of our most requested fruits, berries and pulps — available in bulk, retail and private-label packs."
+              description="A snapshot of our most requested frozen foods, vegetables, fruits and berries — available in bulk, retail and private-label packs."
               className="mx-0"
             />
           </Reveal>

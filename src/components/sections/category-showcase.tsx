@@ -7,6 +7,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { categoryMeta, getProductsByCategory, type ProductCategory } from "@/data/products";
 
 const cards: { key: ProductCategory; image: string }[] = [
+  { key: "food", image: "/images/products/food-french-fries.jpg" },
+  { key: "vegetable", image: "/images/products/veg-mix-veg.jpg" },
   { key: "fruit", image: "/images/products/fruit-kesar-mango.jpg" },
   { key: "berry", image: "/images/products/fruit-blueberry.jpg" },
   { key: "pulp", image: "/images/products/fruit-alphonso-mango.jpg" },
@@ -20,12 +22,12 @@ export function CategoryShowcase() {
         <Reveal>
           <SectionHeading
             eyebrow="What We Offer"
-            title="Four categories. One standard of quality."
-            description="From everyday orchard fruit to imported berries, bulk pulps and exotic specialities — every product follows the same IQF process and quality checks."
+            title="Six categories. One standard of quality."
+            description="From ready-to-cook frozen foods and farm-fresh vegetables to orchard fruit, imported berries, bulk pulps and exotic specialities — every product follows the same freezing process and quality checks."
           />
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, i) => {
             const meta = categoryMeta[card.key];
             const count = getProductsByCategory(card.key).length;
@@ -39,7 +41,7 @@ export function CategoryShowcase() {
                     src={card.image}
                     alt={meta.plural}
                     fill
-                    sizes="(max-width: 1024px) 90vw, 23vw"
+                    sizes="(max-width: 1024px) 90vw, 31vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-900/90 via-ink-900/20 to-transparent" />
