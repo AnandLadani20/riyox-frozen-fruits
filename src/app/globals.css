@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbf9f4;
+  --foreground: #16241a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-jakarta);
+
+  --color-cream-50: #fefdfb;
+  --color-cream-100: #fbf9f4;
+  --color-cream-200: #f5f0e4;
+
+  --color-brand-50: #f1f8f1;
+  --color-brand-100: #dcefdd;
+  --color-brand-200: #b7dfbb;
+  --color-brand-300: #8ac891;
+  --color-brand-400: #5caf68;
+  --color-brand-500: #38914a;
+  --color-brand-600: #27753a;
+  --color-brand-700: #1f5e30;
+  --color-brand-800: #1a4b28;
+  --color-brand-900: #163e22;
+
+  --color-sun-50: #fff8ed;
+  --color-sun-100: #ffecc9;
+  --color-sun-200: #ffd98d;
+  --color-sun-300: #ffc055;
+  --color-sun-400: #ffa323;
+  --color-sun-500: #f78709;
+  --color-sun-600: #d76805;
+  --color-sun-700: #b14e08;
+  --color-sun-800: #8f3e0e;
+  --color-sun-900: #75340f;
+
+  --color-ink-50: #f4f6f4;
+  --color-ink-100: #e3e8e3;
+  --color-ink-400: #6b776c;
+  --color-ink-500: #4c5a4e;
+  --color-ink-700: #2a362c;
+  --color-ink-900: #16241a;
+
+  --shadow-soft: 0 4px 24px -4px rgba(22, 36, 26, 0.08);
+  --shadow-card: 0 12px 32px -12px rgba(22, 36, 26, 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fbf9f4;
+    --foreground: #16241a;
   }
+}
+
+* {
+  border-color: var(--color-ink-100);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* subtle organic texture used behind section backgrounds */
+.bg-leaf-texture {
+  background-image: radial-gradient(
+      circle at 12% 18%,
+      rgba(56, 145, 74, 0.08) 0,
+      transparent 42%
+    ),
+    radial-gradient(circle at 85% 76%, rgba(247, 135, 9, 0.08) 0, transparent 45%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
